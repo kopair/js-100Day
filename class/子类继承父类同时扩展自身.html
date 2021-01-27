@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Father {
+            constructor (x,y){
+                this.x = x
+                this.y = y
+            }
+            sum(){
+                console.log(this.x+this.y);
+            }
+        }
+        class Daughter extends Father{
+            constructor(x,y){
+                // super必须在子类的this之前调用
+                super(x,y)
+                this.x= x
+                this.y= y
+            }
+            subtract(){
+                console.log(this.x - this.y);
+            }
+        }
+        let daughter = new Daughter(20,3)
+        daughter.sum()
+        daughter.subtract()
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // super 关键字调用父类普通函数
+
+        class Father {
+            say(){
+                return 'father'
+            }
+        }
+        class Daughter extends Father{
+            say(){
+                console.log(super.say() + '111');
+                // super.say() 调用父类的普通函数
+            }
+        }
+        let daughter = new Daughter()
+        daughter.say();
+        // 继承方法遵循就近原则
+    </script>
+</body>
+</html>

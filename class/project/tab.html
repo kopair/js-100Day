@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li{
+            padding-right: 20px;
+            display: inline-block;
+        }
+        .close{
+            margin-left: 20px;
+        }
+        .activeTab{
+            color:red;
+        }
+        .activeTabCard{
+            display: block;
+        }
+        section{
+            display: none;
+        }
+        .ulFirst{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <h4>JS 面对对象</h4>
+    <div id="tab">
+        <nav style="display: flex;align-items: center;justify-content: space-between;">
+            <ul class="ulFirst">
+                <li class="activeTab"><span>测试1</span><span class="close">x</span></li>
+                <li><span>测试2</span><span  class="close">x</span></li>
+                <li><span>测试3</span><span  class="close">x</span></li>
+            </ul>
+            <div class="tabadd">
+                <span>+</span>
+            </div>
+        </nav>
+        <div class="ulContent">
+            <section class="activeTabCard">测试1</section>
+            <section>测试2</section>
+            <section>测试3</section>
+        </div>
+    </div>
+    <script src="tab.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // class Father{
+        //     constructor() {
+                
+        //     }
+        //     money(){
+        //         console.log(100);
+        //     }
+        // }
+        // // 子类继承父类
+        // class Daughter extends Father{
+
+        // }
+        // var daughter = new Daughter()
+        // daughter.money()
+
+        class Father{
+            constructor (x,y){
+                this.x = x
+                this.y = y
+            }
+            sum(){
+                console.log(this.x + this.y);
+            }
+        }
+        class Daughter extends Father{
+            constructor (x,y){
+                // 调用父类的构造函数constructor
+                super(x,y);
+            }
+        }
+        var daughter = new Daughter(20,30)
+        daughter.sum()
+    </script>
+</body>
+</html>
