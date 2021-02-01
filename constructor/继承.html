@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>继承</title>
+</head>
+<body>
+    <script>
+        // 借用父构造函数继承属性
+        // 1.父构造函数
+        function Father(uname,age){
+            // 这里的this指向父构造函数的对象实例
+            this.uname = uname
+            this.age = age
+        }
+        Father.prototype.money = function(){
+            console.log(111111111);
+        }
+        // 子构造函数
+        function Son(uname,age){
+            // this
+            Father.call(this,uname,age)
+        }
+        // 使得Son的原型对象指向Father
+        Son.prototype = new Father()
+        // 利用对象的形式修改了原型对象，记得用construtor指回原来的的原型对象
+        // Son.prototype.constructor = Son
+        var son = new Son('asd',12)
+        console.log(son);
+    </script>
+</body>
+</html>

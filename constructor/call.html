@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call</title>
+</head>
+<body>
+    <script>
+        function num(){
+            console.log(this);
+        }
+        // num()
+        var o = {
+            name:'111'
+        }
+        // 执行call函数，改变当前函数的this指向
+        num.call(o)
+    </script>
+</body>
+</html>
