@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组表格例子</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <span>按照价格查询：<input class="
+                start" type="text">- <input class="end" type="text"> </span>
+            <button class="searchPrice">搜索</button>
+            <span>按照商品名称查询：<input class="name" type="text"></span>
+            <button class="searchName">查询</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>产品名称</th>
+                    <th>价格</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>1</td>
+                    <td>小米</td>
+                    <td>999</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var data = [{
+                id: 1,
+                pname: '小米',
+                price: 3999
+            },
+            {
+                id: 2,
+                pname: 'apple',
+                price: 7999
+            }, {
+                id: 3,
+                pname: 'ipad',
+                price: 8999
+            }, {
+                id: 4,
+                pname: '三星',
+                price: 3999
+            },
+        ];
+        var tbody = document.querySelector('tbody')
+        var start = document.querySelector('.start')
+        var end = document.querySelector('.end')
+        var name1 = document.querySelector('.name')
+        var searchPrice = document.querySelector('.searchPrice')
+        var searchName = document.querySelector('.searchName')
+        SetData(data)
+        function SetData(data){
+            tbody.innerHTML = ''
+            data.forEach(function(item,index){
+                var tr = document.createElement('tr')
+                var itemContent = `
+                        <td>${item.id}</td>
+                        <td>${item.pname}</td>
+                        <td>${item.price}</td>
+                    `
+                    tr.innerHTML = itemContent
+                    tbody.appendChild(tr)
+            })    
+        }
+        
+        searchPrice.addEventListener('click',function(){
+            var newData = data.filter(function(value){
+                return value.price >= start.value && value.price <= end.value
+            })
+            SetData(newData)
+        })
+        searchName.addEventListener('click',function(){
+            var newdata = data.filter(function(value){
+                if(value.pname == name1.value){
+                    return value
+                }
+            })
+            SetData(newdata)
+        })
+    </script>
+</body>
+
+</html>
