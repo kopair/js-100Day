@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // call()
+        var o = {
+            name:'222'
+        }
+        function fn(a){
+            console.log(this);
+            console.log(a);
+            // console.log(a + b);
+        }
+        // apply(this,array) 第二个必须是数组
+        fn.apply(o,['11'])
+        // apply 主要应用 借助于数学内置对象求最大值
+        var arr = [1,22,33344,90]
+        var maxnum = Math.max.apply(Math,arr)
+        console.log(maxnum);
+        // function Father (uname,age,sex){
+        //     this.uname = uname
+        //     this.age = age
+        //     this.sex = sex
+        // }
+        // function Son(uname,age,sex){
+        //     // 实现继承
+        //     Father.call(this,uname,age,sex)
+        // }
+    </script>
+</body>
+</html>

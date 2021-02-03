@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // call()
+        var o = {
+            name:'111'
+        }
+        function fn(a,b){
+            console.log(this);
+            console.log(a + b);
+        }
+        // call 1.可以调用函数 2.可以改变函数内的this指向
+        // call 可以实现继承
+        fn.call(o,1,2)
+        function Father (uname,age,sex){
+            this.uname = uname
+            this.age = age
+            this.sex = sex
+        }
+        function Son(uname,age,sex){
+            // 实现继承
+            Father.call(this,uname,age,sex)
+        }
+    </script>
+</body>
+</html>l
